@@ -32,4 +32,15 @@ GROUP BY anno_iscrizione;
 SELECT teachers.office_address AS ufficio_comune, COUNT(id) AS n_insegnati
 FROM teachers
 GROUP BY ufficio_comune;
+
+/*3/Calcolare la media dei voti di ogni appello d'esame*/
+SELECT exam_id as appello_esame, AVG(exam_student.vote) AS media_voti
+FROM exam_student
+GROUP BY appello_esame;
+
+
+/*4/Contare quanti corsi di laurea ci sono per ogni dipartimento*/
+SELECT degrees.department_id AS dipartimento, COUNT(id)as n_corsi_laurea
+FROM degrees
+GROUP BY dipartimento;
 ```
