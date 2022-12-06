@@ -17,4 +17,19 @@ SELECT * FROM degrees WHERE name LIKE "%Laurea Magistrale%";
 SELECT COUNT(id) from departments;
 /*Quanti sono gli insegnanti che non hanno un numero di telefono? (50)*/
 SELECT * FROM teachers WHERE phone IS null;
+
+
+
+
+
+GROUP BY
+/*1/Contare quanti iscritti ci sono stati ogni anno*/
+SELECT YEAR(students.enrolment_date) AS anno_iscrizione, COUNT(id) AS numero_iscritti
+FROM students
+GROUP BY anno_iscrizione;
+
+/*2/ Contare gli insegnanti che hanno l'ufficio nello stesso edificio*/
+SELECT teachers.office_address AS ufficio_comune, COUNT(id) AS n_insegnati
+FROM teachers
+GROUP BY ufficio_comune;
 ```
